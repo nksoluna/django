@@ -1,596 +1,171 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <title>Grand Chase</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="responsiveslides.min.js"></script>
-
-  <style>
-$('.jcarousel')
-    .on('jcarousel:create jcarousel:reload', function() {
-        var element = $(this),
-            width = element.innerWidth();
-
-        if (width > 900) {
-            width = width / 3;
-        } else if (width > 600) {
-            width = width / 2;
-        }
-
-        element.jcarousel('items').css('width', width + 'px');
-    })
-    .jcarousel({
-        // Your configurations options
-    });
-
-	.jcarousel img {
-    display: block;
-    max-width: 100%;
-    height: auto !important;
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
 }
 
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
 
-	  html {
-    font-size: 62.5%; /* เพื่อให้ 1rem มีค่าประมาณ 10px */
-	height: 100%;
-	
-	
-}
-.Centered {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  margin-left: -100px;
-  margin-top: -50px;
-}
-.slider {
-  width: 100%;
-  height: auto;
-  overflow-x: scroll;
-}
-	  .responsive {
-  width: 100%;
-  height: auto;
-  position: center ;
-	  }
-	  .responsive2 {
-  width: 100%;
-  height: 100% ;
-  position: center ;
-  ;
-	  }
-  body {
-	height: 100%;
-	
-	
-    font: 20px Montserrat, sans-serif;
-    line-height: 1.8;
-    color: cornsilk;
-	font-size: 1.4em; /* มีค่าประมาณ 14px */
-  }
-  .bg {
-	background-image: url("https://i.ibb.co/9pspmjB/gc11.jpg"); 
-	min-height: 100%;
-  min-width: 1024px;
-	
-  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto;
-	
-  /* Set up positioning */
-  background-attachment: fixed;
-  top: 0;
-  left: 0;
-	height: 100%;
-	background-repeat: no-repeat ;
-	background-size: cover ;
-	background-position: center;
-	
-  }
-  .highlight {
-    font-size: 20px;
-    font-size: 2.0rem;
-}
-.highlight {
-    font-size: 60px;
-    font-size: 6.0rem;
-}
-.highlight > h4 {
-    font-size: 1em; /* 70x1 = 70px */
-}
-.highlight > h3 {
-    font-size: 1em; /* 70x1 = 70px */
-}
-.center {
+/* Header/logo Title */
+.header {
+  padding: 80px;
   text-align: center;
-  background-attachment: fixed;
-  margin: 0 auto;
-  display: inline-block;
-  }
-table { 
-  width: 100%; 
-  border-collapse: collapse; 
+  background: #1abc9c;
+  color: white;
 }
-/* Zebra striping */
-tr:nth-of-type(odd) { 
-  background: #eee; 
-}
-th { 
-  background: #333; 
-  color: white; 
-  font-weight: bold; 
-}
-td, th { 
-  padding: 6px; 
-  border: 1px solid #ccc; 
-  text-align: left; 
-}
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
 
-	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	}
-	
-	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	tr { border: 1px solid #ccc; }
-	
-	td { 
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
-	}
-	
-	td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-	}
-	
-  p {font-size: 16px;}
-  .margin {margin-bottom: 45px;}
-  .bg-1 { 
-    
-	background-size: ;
-    color: #ffffff;
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
   }
-  .bg-2 { 
-	
-     /* Dark Blue */
-    color: #ffffff;
-  }
-  .bg-3 { 
-    background-color: #ffffff; /* White */
-    color: #555555;
-  }
-  .bg-4 { 
-    background-color: rgb(40, 0, 0) ; /* Black Gray */
-    color: #fff;
-	background-size: cover;
-	background-attachment: fixed;
-  }
-  .bg-5 {
-	  
-	 
-  }
-  .container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-  .navbar {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
-  }
- 
-  footer	{
-  width:100%;
-  height:20%; //your desired height
-  position:absolute;
-  bottom:0;
-  left:0;
-  }
-  .navbar-nav  li a:hover {
-    color: #1abc9c !important;
-  }
-  h4 {
-	  color: red;
-	  font-size: 85px;
-	  text-align: center !important;
-	  background-size: cover;
-	
-  }
-  h5 {
-	  color : blue ;
-	  font-size: 30px ;
-	  text-align: center !important;
-  }
-  h3{
-	  color : goldenrod;
-	  font-size: 85 px;
-	  text-align: center !important;
-  }
-  .page-wrap { width: 400px; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
-		p { font: 15px/2 Georgia, Serif; margin: 0 0 30px 0; text-indent: 40px; }
-@media only screen and (max-width: 600px) {
-	footer {
-	width:100%;
-  height: auto ; 
-  position:center;
-  bottom:0;
-  left:0;
-  }
-  .topnav a {
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
     float: none;
     width: 100%;
   }
-
-  .margin {
-	text-align: center;
-
-  }
-  .center {
-  text-align: center;
-  margin: 0 auto;
-  display: inline-block;
-  }
 }
-.myCarousel .carousel-outer {
-  position: relative;
-  overflow:hidden;
-            display: flex;
-            justify-content: center;
-}
-
-
-@media(min-width: 992px){
-    .myCarousel {
-      margin-top: 20px;
-	  overflow:hidden;
-            display: flex;
-            justify-content: center;
-	}      
-    .carousel-inner {
-      height: auto;
-    .item {
-        height:500px;
-        line-height:300px;
-      }
-    }
-  }
-}
-
-@media(max-width: 991px){
-.myCarousel {
-      margin-top: 20px;
-
-    .carousel-inner {
-      height: auto;
-    .item {
-        height:300px;
-        line-height:300px;
-        text-align:center;
-
-      }
-    }
-  }
-}
-  
-  </style>
+</style>
 </head>
 <body>
 
-	<div class="navbar navbar-inverse navbar-fixed-top">
-				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" img src="bg-5">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>                        
-				  </button>
-				  <a class="navbar-brand" href="https://grandchase.fandom.com/wiki/Grand_Chase_Wiki">More info</a>
-				</div>
-				<div class="collapse navbar-collapse" id="myNavbar">
-				  <ul class="nav navbar-nav navbar-right">
-					<li><a href="http://forums.gcmadness.com/"class="btn btn-outline-primary">Forum</a></li>
-					<li><a href="https://discordapp.com/channels/285041318097453066/285041318097453066"class="btn btn-outline-primary">Contact us</a></li>
-					<li><a href="https://www.facebook.com/pg/GCMContentLibrary/photos/?tab=albums"class="btn btn-outline-primary">Media</a></li>
-				  </ul>
-				</div>
-				</div>
-			  </div>
-			</nav>
-			<br>
-			<br>
-
-<!-- First Container -->
-<div class="container-fluid bg responsive text-center">
-  
-  <img src="https://i.ibb.co/30x05hH/GClogo.png" class="img-responsive img-circle margin" style="display:inline" alt="logo" width="350" height="350">
-</div>
+<div class="header">
+  <h1>My Profile</h1>
+  <p><b>Create by Piyapong thammachaisopit</b> </p>
 </div>
 
-<!-- Second Container -->
-<div class="container-fluid bg-2 text-center"></div>
-
-  
-    
-  </a>
+<div class="navbar">
+  <a href="#" class="active">Home</a>
+  <a href="#">About</a>
+  <a href="#">Picture</a>
+  <a href="#" class="right">Facebook</a>
 </div>
 
-<!-- Third Container (Grid) -->
-
-<div class="container-fluid bg-3 text-center">  
-	<div class="responsive">
-<div class="highlight block">  
-  <h3 class="margin">Characters</h3>
-</div></div>
-<div style="text-align: center">
-  <img src="https://vignette.wikia.nocookie.net/grandchase/images/7/71/Selectelesis02.png/revision/latest/scale-to-width-down/62?cb=20181203134016" alt="Selectelesis02"  	class="" data-image-key="Selectelesis02.png" data-image-name="Selectelesis02.png" width="62" height="306" >
-  <img src="https://vignette.wikia.nocookie.net/grandchase/images/0/01/Selectlire02.png/revision/latest/scale-to-width-down/62?cb=20181204165446" 	 alt="Selectlire02"  	class="" 	 	data-image-key="Selectlire02.png" 	data-image-name="Selectlire02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-  <img src="https://vignette.wikia.nocookie.net/grandchase/images/f/f6/Selectarme02.png/revision/latest/scale-to-width-down/62?cb=20181204165528" 	 alt="Selectarme02"  	class="" 	 	data-image-key="Selectarme02.png" 	data-image-name="Selectarme02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-  <img src="https://vignette.wikia.nocookie.net/grandchase/images/3/36/Selectlass02.png/revision/latest/scale-to-width-down/62?cb=20190319071343" 	 alt="Selectlass02"  	class="" 	 	data-image-key="Selectlass02.png" 	data-image-name="Selectlass02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-  <img src="https://vignette.wikia.nocookie.net/grandchase/images/a/ab/Selectryan02.png/revision/latest/scale-to-width-down/62?cb=20181211081658" 	 alt="Selectryan02"  	class="" 	 	data-image-key="Selectryan02.png" 	data-image-name="Selectryan02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-  <img src="https://vignette.wikia.nocookie.net/grandchase/images/e/ed/Selectronan02.png/revision/latest/scale-to-width-down/62?cb=20181115103756" 	 alt="Selectronan02"  	class="" 	 	data-image-key="Selectronan02.png" 	data-image-name="Selectronan02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-  <img src="https://vignette.wikia.nocookie.net/grandchase/images/7/73/Selectamy02.png/revision/latest/scale-to-width-down/62?cb=20181115103900" 	 alt="Selectamy02"  	class="" 	 	data-image-key="Selectamy02.png" 	data-image-name="Selectamy02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-  <img src="https://vignette.wikia.nocookie.net/grandchase/images/c/c6/Selectjin02.png/revision/latest/scale-to-width-down/62?cb=20190720122036" 	 alt="Selectjin02"  	class="" 	 	data-image-key="Selectjin02.png" 	data-image-name="Selectjin02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-  <img src="https://vignette.wikia.nocookie.net/grandchase/images/0/0c/Selectsieghart02.png/revision/latest/scale-to-width-down/62?cb=20190319071426" 	 alt="Selectsieghart02"  	class="" 	 	data-image-key="Selectsieghart02.png" 	data-image-name="Selectsieghart02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-  <img src="https://vignette.wikia.nocookie.net/grandchase/images/0/0d/Selectmari02.png/revision/latest/scale-to-width-down/62?cb=20190117102157" 	 alt="Selectmari02"  	class="" 	 	data-image-key="Selectmari02.png" 	data-image-name="Selectmari02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-
-</div>
-<div style="text-align: center">
-		<img src="https://vignette.wikia.nocookie.net/grandchase/images/1/12/Selectdio02.png/revision/latest/scale-to-width-down/62?cb=20190720114928" 	 alt="Selectdio02"  	class="" 	 	data-image-key="Selectdio02.png" 	data-image-name="Selectdio02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-	<img src="https://vignette.wikia.nocookie.net/grandchase/images/8/8d/Selectzero02.png/revision/latest/scale-to-width-down/62?cb=20190720115031" 	 alt="Selectzero02"  	class="" 	 	data-image-key="Selectzero02.png" 	data-image-name="Selectzero02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-	<img src="https://vignette.wikia.nocookie.net/grandchase/images/2/20/Selectley02.png/revision/latest/scale-to-width-down/62?cb=20190412023601" 	 alt="Selectley02"  	class="" 	 	data-image-key="Selectley02.png" 	data-image-name="Selectley02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-	<img src="https://vignette.wikia.nocookie.net/grandchase/images/2/26/Selectrufus02.png/revision/latest/scale-to-width-down/62?cb=20181211081604" 	 alt="Selectrufus02"  	class="" 	 	data-image-key="Selectrufus02.png" 	data-image-name="Selectrufus02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-	<img src="https://vignette.wikia.nocookie.net/grandchase/images/b/b7/Selectrin02.png/revision/latest/scale-to-width-down/62?cb=20190117102240" 	 alt="Selectrin02"  	class="" 	 	data-image-key="Selectrin02.png" 	data-image-name="Selectrin02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-	<img src="https://vignette.wikia.nocookie.net/grandchase/images/3/3a/Selectasin02.png/revision/latest/scale-to-width-down/62?cb=20190820073138" 	 alt="Selectasin02"  	class="" 	 	data-image-key="Selectasin02.png" 	data-image-name="Selectasin02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-	<img src="https://vignette.wikia.nocookie.net/grandchase/images/e/e7/Selectlime02.png/revision/latest/scale-to-width-down/62?cb=20190806105600" 	 alt="Selectlime02"  	class="" 	 	data-image-key="Selectlime02.png" 	data-image-name="Selectlime02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-	<img src="https://vignette.wikia.nocookie.net/grandchase/images/6/62/Selectedel02.png/revision/latest/scale-to-width-down/62?cb=20190720115123" 	 alt="Selectedel02"  	class="" 	 	data-image-key="Selectedel02.png" 	data-image-name="Selectedel02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-	<img src="https://vignette.wikia.nocookie.net/grandchase/images/0/04/Selectveigas02.png/revision/latest/scale-to-width-down/62?cb=20190707043848" 	 alt="Selectveigas02"  	class="" 	 	data-image-key="Selectveigas02.png" 	data-image-name="Selectveigas02.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-	<img src="https://vignette.wikia.nocookie.net/grandchase/images/a/ad/Selectuno01.png/revision/latest/scale-to-width-down/62?cb=20180614094547" 	 alt="Selectuno01"  	class="" 	 	data-image-key="Selectuno01.png" 	data-image-name="Selectuno01.png" 	 	 width="62"  	 height="306"  	 	 	 	>
-</div>
-  <table class="table" style="text-align:center; font-text-align:right; width: 100%;">
-		<tr>
-		<th><center><h5><b>Character</b></center><br><br></h5>
-		</th><th><center><h5><b>Background</b></center><br><br></h5>
-		</th><th><center><h5><b>Membership</b></center><br><br></h5>
-		</th></tr>
-		<tr>
-		<td><center><a href="/wiki/Elesis" 	class="image image-thumbnail link-internal" 	 title="Elesis"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/9/94/IconHero-Elesis-5.png/revision/latest?cb=20180412130740" 	 alt="IconHero-Elesis-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Elesis-5.png" 	data-image-name="IconHero-Elesis-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/9/94/IconHero-Elesis-5.png/revision/latest?cb=20180412130740"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/9/94/IconHero-Elesis-5.png/revision/latest?cb=20180412130740" 	 alt="IconHero-Elesis-5"  	class="" 	 	data-image-key="IconHero-Elesis-5.png" 	data-image-name="IconHero-Elesis-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Elesis" title="Elesis">Elesis</a></b></center>
-		</td><td><center>A <a href="/wiki/Human" title="Human">human</a> warrior from Kanavan and the leader of the <a href="/wiki/Ruby_Knights" title="Ruby Knights">Ruby Knights</a>, Elesis joined the Chase in hopes of locating her father <a href="/wiki/Elscud" title="Elscud">Elscud</a>, a <a href="/wiki/Kanavan_Tracker" title="Kanavan Tracker" class="mw-redirect">Kanavan Tracker</a> who had gone missing after being dispatched in the search for Kaze'aze.</center>
-		</td><td><center>From the beginning</center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Lire" 	class="image image-thumbnail link-internal" 	 title="Lire"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/d/df/IconHero-Lire-5.png/revision/latest?cb=20180412130753" 	 alt="IconHero-Lire-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Lire-5.png" 	data-image-name="IconHero-Lire-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/d/df/IconHero-Lire-5.png/revision/latest?cb=20180412130753"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/d/df/IconHero-Lire-5.png/revision/latest?cb=20180412130753" 	 alt="IconHero-Lire-5"  	class="" 	 	data-image-key="IconHero-Lire-5.png" 	data-image-name="IconHero-Lire-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Lire" title="Lire">Lire</a></b></center>
-		</td><td><center>An <a href="/wiki/Elf" title="Elf">elf</a> of <a href="/wiki/Eryuell_Island" title="Eryuell Island">Eryuell Island</a> and a member of the <a href="/wiki/Elven_Corps" title="Elven Corps">Elven Corps</a>, Lire joined the Chase on behalf of the elves of Eryuell to combat Kaze'aze's evil.</center>
-		</td><td><center>From the beginning</center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Arme" 	class="image image-thumbnail link-internal" 	 title="Arme"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/3/3e/IconHero-Arme-5.png/revision/latest?cb=20180412130808" 	 alt="IconHero-Arme-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Arme-5.png" 	data-image-name="IconHero-Arme-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/3/3e/IconHero-Arme-5.png/revision/latest?cb=20180412130808"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/3/3e/IconHero-Arme-5.png/revision/latest?cb=20180412130808" 	 alt="IconHero-Arme-5"  	class="" 	 	data-image-key="IconHero-Arme-5.png" 	data-image-name="IconHero-Arme-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Arme" title="Arme">Arme</a></b></center>
-		</td><td><center>A cheerful <a href="/wiki/Magician" title="Magician">Magician</a> of the <a href="/wiki/Violet_Mage" title="Violet Mage">Violet Mage</a> guild in Serdin, Arme joined the Chase for one simple reason alone: to encounter the evil queen and her magic in order to study it.</center>
-		</td><td><center>From the beginning</center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Lass" 	class="image image-thumbnail link-internal" 	 title="Lass"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/8/8f/IconHero-Lass-5.png/revision/latest?cb=20180412130821" 	 alt="IconHero-Lass-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Lass-5.png" 	data-image-name="IconHero-Lass-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/8/8f/IconHero-Lass-5.png/revision/latest?cb=20180412130821"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/8/8f/IconHero-Lass-5.png/revision/latest?cb=20180412130821" 	 alt="IconHero-Lass-5"  	class="" 	 	data-image-key="IconHero-Lass-5.png" 	data-image-name="IconHero-Lass-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Lass" title="Lass">Lass</a></b></center>
-		</td><td><center>A member of the <a href="/wiki/Silver_Cross_Thieves" title="Silver Cross Thieves">Silver Cross Thieves</a> and a half-<a href="/wiki/Demon" title="Demon">demon</a>, Lass was a child possessed by Kaze'aze. He was first introduced at <a href="/wiki/Partusay%27s_Sea" title="Partusay's Sea">Partusay's Sea</a> as an illusion and later has his first true encounter with the Chase at <a href="/wiki/Kamiki%27s_Castle" title="Kamiki's Castle">Kamiki's Castle</a>. He was finally freed from Kaze'aze's possession at Kaze'aze's Castle upon her defeat. Overwhelmed with guilt at the atrocities he had committed whilst under Kaze'aze's control, he joined the Chase to atone.</center>
-		</td><td><center><a href="/wiki/Kaze%27aze%27s_Castle" title="Kaze'aze's Castle">Kaze'aze's Castle</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Ryan" 	class="image image-thumbnail link-internal" 	 title="Ryan"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/c/c5/IconHero-Ryan-5.png/revision/latest?cb=20180412130835" 	 alt="IconHero-Ryan-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Ryan-5.png" 	data-image-name="IconHero-Ryan-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/c/c5/IconHero-Ryan-5.png/revision/latest?cb=20180412130835"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/c/c5/IconHero-Ryan-5.png/revision/latest?cb=20180412130835" 	 alt="IconHero-Ryan-5"  	class="" 	 	data-image-key="IconHero-Ryan-5.png" 	data-image-name="IconHero-Ryan-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Ryan" title="Ryan">Ryan</a></b></center>
-		</td><td><center>An elven <a href="/wiki/Druid" title="Druid">Druid</a> hailing from the Elven Forest, Ryan was first encountered by the Chase in the form of a <a href="/wiki/Wolf" title="Wolf">Wolf</a> as he fought to defend his homeland. After defeating the <a href="/wiki/Troll" title="Troll">Troll</a> who was responsible for the destruction of the forest, Ryan joined the Chase.</center>
-		</td><td><center><a href="/wiki/Elven_Forest" title="Elven Forest">Elven Forest</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Ronan" 	class="image image-thumbnail link-internal" 	 title="Ronan"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/2/2d/IconHero-Ronan-5.png/revision/latest?cb=20180412130851" 	 alt="IconHero-Ronan-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Ronan-5.png" 	data-image-name="IconHero-Ronan-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/2/2d/IconHero-Ronan-5.png/revision/latest?cb=20180412130851"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/2/2d/IconHero-Ronan-5.png/revision/latest?cb=20180412130851" 	 alt="IconHero-Ronan-5"  	class="" 	 	data-image-key="IconHero-Ronan-5.png" 	data-image-name="IconHero-Ronan-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Ronan" title="Ronan">Ronan</a></b></center>
-		</td><td><center>A <a href="/wiki/Spell_Knight" title="Spell Knight">Spell Knight</a> of Kanavan and a member of the <a href="/wiki/Kanavan_Royal_Guard" title="Kanavan Royal Guard">Kanavan Royal Guard</a>, Ronan was first introduced at the <a href="/wiki/Gorge_of_Oath" title="Gorge of Oath">Gorge of Oath</a> and requested their aid at Gaikoz's Castle, leaving after empowering the group with the spell, <a href="/wiki/Spell_Knight#Skills" title="Spell Knight">Holy Bless</a>. Upon defeating <a href="/wiki/Gaikoz" title="Gaikoz">Gaikoz</a> at his own castle, Ronan thanked the group and joined them on their journey to overthrow Kaze'aze.</center>
-		</td><td><center><a href="/wiki/Gaikoz%27s_Castle" title="Gaikoz's Castle">Gaikoz's Castle</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Amy" 	class="image image-thumbnail link-internal" 	 title="Amy"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/e/e8/IconHero-Amy-5.png/revision/latest?cb=20180412130908" 	 alt="IconHero-Amy-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Amy-5.png" 	data-image-name="IconHero-Amy-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/e/e8/IconHero-Amy-5.png/revision/latest?cb=20180412130908"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/e/e8/IconHero-Amy-5.png/revision/latest?cb=20180412130908" 	 alt="IconHero-Amy-5"  	class="" 	 	data-image-key="IconHero-Amy-5.png" 	data-image-name="IconHero-Amy-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Amy" title="Amy">Amy</a></b></center>
-		</td><td><center>An Oracle and celebrated <a href="/wiki/Dancer" title="Dancer">Dancer</a> of <a href="/wiki/Xenia" title="Xenia">Xenia</a>, Amy first appeared in <a href="/wiki/Lake_Aurora" title="Lake Aurora">Lake Aurora</a> where she spied on the Chase before leaving. She was later encountered at the Temple of Cuatal and after saving <a href="/wiki/Samsara" title="Samsara">Samsara</a> with the help of the Chase, joined them to stop the <a href="/wiki/Ascendant_God" title="Ascendant God" class="mw-redirect">Ascendant God</a>'s mission of chaos.</center>
-		</td><td><center><a href="/wiki/Temple_of_Cuatal" title="Temple of Cuatal">Temple of Cuatal</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Jin" 	class="image image-thumbnail link-internal" 	 title="Jin"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/e/ea/IconHero-Jin-5.png/revision/latest?cb=20180412130920" 	 alt="IconHero-Jin-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Jin-5.png" 	data-image-name="IconHero-Jin-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/e/ea/IconHero-Jin-5.png/revision/latest?cb=20180412130920"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/e/ea/IconHero-Jin-5.png/revision/latest?cb=20180412130920" 	 alt="IconHero-Jin-5"  	class="" 	 	data-image-key="IconHero-Jin-5.png" 	data-image-name="IconHero-Jin-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Jin" title="Jin">Jin</a></b></center>
-		</td><td><center>A survivor of the nearly annihilated guild, <a href="/wiki/Silver_Knights" title="Silver Knights">Silver Knights</a>, Jin was first encountered at the Ruins of the Silver Knights, where he killed an <a href="/wiki/Undead_Fighter" title="Undead Fighter">Undead Fighter</a> who was attacking Elesis. After defeating the <a href="/wiki/Black_Fairy_Queen" title="Black Fairy Queen">Black Fairy Queen</a>, Jin joined the Chase in hopes of avenging his fallen brethren.</center>
-		</td><td><center><a href="/wiki/Ruins_of_the_Silver_Knights" title="Ruins of the Silver Knights">Ruins of the Silver Knights</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Sieghart" 	class="image image-thumbnail link-internal" 	 title="Sieghart"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/3/35/IconHero-Sieghart-5.png/revision/latest?cb=20180412130935" 	 alt="IconHero-Sieghart-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Sieghart-5.png" 	data-image-name="IconHero-Sieghart-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/3/35/IconHero-Sieghart-5.png/revision/latest?cb=20180412130935"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/3/35/IconHero-Sieghart-5.png/revision/latest?cb=20180412130935" 	 alt="IconHero-Sieghart-5"  	class="" 	 	data-image-key="IconHero-Sieghart-5.png" 	data-image-name="IconHero-Sieghart-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Sieghart" title="Sieghart">Sieghart</a></b></center>
-		</td><td><center>A well-known hero of <a href="/wiki/Bermesiah" title="Bermesiah">Bermesiah</a> from 600 years ago, Sieghart was nearly killed before being reborn as a <a href="/wiki/Highlander" title="Highlander" class="mw-redirect">Highlander</a>. He was looking to join the Grand Chase and encountered them many times through their travels, only realizing who they are at <a href="/wiki/Xenia_Border" title="Xenia Border">Xenia Border</a> but only joining them at the Wyrm's Maw.</center>
-		</td><td><center><a href="/wiki/The_Wyrm%27s_Maw" title="The Wyrm's Maw">The Wyrm's Maw</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Mari" 	class="image image-thumbnail link-internal" 	 title="Mari"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/0/08/IconHero-Mari-5.png/revision/latest?cb=20180412130950" 	 alt="IconHero-Mari-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Mari-5.png" 	data-image-name="IconHero-Mari-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/0/08/IconHero-Mari-5.png/revision/latest?cb=20180412130950"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/0/08/IconHero-Mari-5.png/revision/latest?cb=20180412130950" 	 alt="IconHero-Mari-5"  	class="" 	 	data-image-key="IconHero-Mari-5.png" 	data-image-name="IconHero-Mari-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Mari" title="Mari">Mari</a></b></center>
-		</td><td><center>An amnesiac girl who is encountered at the Temple of Destruction, Mari is in actuality a descendant of an ancient kingdom known as <a href="/wiki/Kounat" title="Kounat">Kounat</a>. She first woke up from her hibernation in an escape pod at the <a href="/wiki/Kastulle_Ruins_Upper_Floor" title="Kastulle Ruins Upper Floor">Kastulle Ruins Upper Floor</a> and lacking her memories, wandered in a search. Upon learning about Sieghart's immortality, her interest was perked and she joined the Chase to further her research.</center>
-		</td><td><center><a href="/wiki/Temple_of_Destruction" title="Temple of Destruction">Temple of Destruction</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Dio" 	class="image image-thumbnail link-internal" 	 title="Dio"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/6/60/IconHero-Dio-5.png/revision/latest?cb=20180615032930" 	 alt="IconHero-Dio-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Dio-5.png" 	data-image-name="IconHero-Dio-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/6/60/IconHero-Dio-5.png/revision/latest?cb=20180615032930"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/6/60/IconHero-Dio-5.png/revision/latest?cb=20180615032930" 	 alt="IconHero-Dio-5"  	class="" 	 	data-image-key="IconHero-Dio-5.png" 	data-image-name="IconHero-Dio-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Dio" title="Dio">Dio</a></b></center>
-		</td><td><center>An <a href="/wiki/Asmodian" title="Asmodian" class="mw-redirect">Asmodian</a> from <a href="/wiki/Elyos" title="Elyos">Elyos</a> and the chief of the <a class="new" title="Moderate (page does not exist)" rel="nofollow" data-uncrawlable-url="L3dpa2kvTW9kZXJhdGU/YWN0aW9uPWVkaXQmcmVkbGluaz0x">Moderate</a> family, <a href="/wiki/Burning_Canyon" title="Burning Canyon">Burning Canyon</a>, Dio was an embassy sent to aid <a href="/wiki/Kounat" title="Kounat">Kounat</a> against the invasion of the <a href="/wiki/Hardliners" title="Hardliners">Hardliners</a>. Trapped in <a href="/wiki/Aernas" title="Aernas">Aernas</a> after the war, Dio continued to seal the <a href="/wiki/Dimensional_Portals" title="Dimensional Portals" class="mw-redirect">Dimensional Portals</a> left in Aernas. He was introduced and invited to join the Chase in the Relics of Kounat, to which he agreed for the sake of pursuing his own interests.</center>
-		</td><td><center><a href="/wiki/Relics_of_Kounat" title="Relics of Kounat">Relics of Kounat</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Zero" 	class="image image-thumbnail link-internal" 	 title="Zero"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/f/f5/IconHero-Zero-5.png/revision/latest?cb=20180822144429" 	 alt="IconHero-Zero-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Zero-5.png" 	data-image-name="IconHero-Zero-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/f/f5/IconHero-Zero-5.png/revision/latest?cb=20180822144429"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/f/f5/IconHero-Zero-5.png/revision/latest?cb=20180822144429" 	 alt="IconHero-Zero-5"  	class="" 	 	data-image-key="IconHero-Zero-5.png" 	data-image-name="IconHero-Zero-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Zero" title="Zero">Zero</a></b></center>
-		</td><td><center>An artificial demon created by <a href="/wiki/Oz" title="Oz">Oz</a> to wield the <a href="/wiki/Grandark" title="Grandark">Grandark</a>, Zero constantly wandered the world in search of a source of power. He clashed swords with the Chase at the Wyrm's Maw and later with <a href="/wiki/Duel" title="Duel">Duel</a> at <a href="/wiki/Thunder_Hammer" title="Thunder Hammer">Thunder Hammer</a>, leaving both times. He has teamed up with the Chase during the <a href="/wiki/Wizard%27s_Labyrinth" title="Wizard's Labyrinth">Wizard's Labyrinth</a> but has not been encountered since. In the sequel, Zero appeared again and saved the Grand Chase from the mass produced combat drone, joining them afterward.</center>
-		</td><td><center><a href="/wiki/Sky_City" title="Sky City">Sky City</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Ley" 	class="image image-thumbnail link-internal" 	 title="Ley"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/4/44/IconHero-Rey-5.png/revision/latest?cb=20180412131016" 	 alt="IconHero-Rey-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Rey-5.png" 	data-image-name="IconHero-Rey-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/4/44/IconHero-Rey-5.png/revision/latest?cb=20180412131016"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/4/44/IconHero-Rey-5.png/revision/latest?cb=20180412131016" 	 alt="IconHero-Rey-5"  	class="" 	 	data-image-key="IconHero-Rey-5.png" 	data-image-name="IconHero-Rey-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Ley" title="Ley">Ley</a></b></center>
-		</td><td><center>An Asmodian from Elyos and the young lady of the Moderate family, <a href="/wiki/Crimson_River" title="Crimson River">Crimson River</a>, Ley was sent by her <a href="/wiki/Peter" title="Peter">father</a> to search for Dio in order to reaffirm their family's alliance. The Chase encountered her and her butler <a href="/wiki/Jeeves" title="Jeeves">Jeeves</a> in <a href="/wiki/King_Guang%27s_Fen" title="King Guang's Fen">King Guang's Fen</a>. Realizing that they do not have Dio's whereabouts, she left and was not seen again until the Wizard's Labyrinth. She has joined the Chase by the events of Berkas' Lair.</center>
-		</td><td><center>Prior to <a href="/wiki/Berkas%27_Lair" title="Berkas' Lair">Berkas' Lair</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Rufus" 	class="image image-thumbnail link-internal" 	 title="Rufus"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/3/34/IconHero-Lupus-5.png/revision/latest?cb=20180412131032" 	 alt="IconHero-Lupus-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Lupus-5.png" 	data-image-name="IconHero-Lupus-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/3/34/IconHero-Lupus-5.png/revision/latest?cb=20180412131032"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/3/34/IconHero-Lupus-5.png/revision/latest?cb=20180412131032" 	 alt="IconHero-Lupus-5"  	class="" 	 	data-image-key="IconHero-Lupus-5.png" 	data-image-name="IconHero-Lupus-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Rufus" title="Rufus">Rufus</a></b></center>
-		</td><td><center>A <a href="/wiki/Haros" title="Haros" class="mw-redirect">Haros</a> from the <a href="/wiki/Underworld" title="Underworld">Underworld</a>, Rufus is a <a href="/wiki/Bounty_Hunter" title="Bounty Hunter">Bounty Hunter</a> and also Lass' half-brother. Whilst completing a job in Aernas, he detected the use of the blue flame and set out to investigate, narrowly missing the Chase at the <a href="/wiki/Nightmare_Circus" title="Nightmare Circus">Nightmare Circus</a>. He has, however, allied himself with the group during the Wizard's Labyrinth and has joined the Chase by the events of Berkas' Lair.</center>
-		</td><td><center>Prior to <a href="/wiki/Berkas%27_Lair" title="Berkas' Lair">Berkas' Lair</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Rin" 	class="image image-thumbnail link-internal" 	 title="Rin"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/f/fd/IconHero-Lin-5.png/revision/latest?cb=20180703142209" 	 alt="IconHero-Lin-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Lin-5.png" 	data-image-name="IconHero-Lin-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/f/fd/IconHero-Lin-5.png/revision/latest?cb=20180703142209"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/f/fd/IconHero-Lin-5.png/revision/latest?cb=20180703142209" 	 alt="IconHero-Lin-5"  	class="" 	 	data-image-key="IconHero-Lin-5.png" 	data-image-name="IconHero-Lin-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Rin" title="Rin">Rin</a></b></center>
-		</td><td><center>A girl from the <a href="/wiki/Gaon_Village" title="Gaon Village" class="mw-redirect">uncharted village of Gaon</a> and the current incarnation of <a href="/wiki/Agnesia" title="Agnesia" class="mw-redirect">Agnesia</a>, the goddess of life and purity, Rin was encountered by the Chase in the Relics of Kounat. After realizing that she was being pursued by a powerful demon, Rin was invited to join the Chase for her protection.</center>
-		</td><td><center><a href="/wiki/Relics_of_Kounat" title="Relics of Kounat">Relics of Kounat</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Asin" 	class="image image-thumbnail link-internal" 	 title="Asin"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/8/89/IconHero-Azin-5.png/revision/latest?cb=20190129082958" 	 alt="IconHero-Azin-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Azin-5.png" 	data-image-name="IconHero-Azin-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/8/89/IconHero-Azin-5.png/revision/latest?cb=20190129082958"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/8/89/IconHero-Azin-5.png/revision/latest?cb=20190129082958" 	 alt="IconHero-Azin-5"  	class="" 	 	data-image-key="IconHero-Azin-5.png" 	data-image-name="IconHero-Azin-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Asin" title="Asin">Asin</a></b></center>
-		</td><td><center>Once a nameless boy who had saved <a href="/wiki/Silver_Knights#Asin_Tairin" title="Silver Knights">Asin Tairin</a> and nursed him back to health, Asin was taught martial arts by the man he saved. He adopted his mentor's name and weapon after the man died from his injuries during a second monster attack. Seeking to prove his strength, he searched for his mentor's former student Jin until he eventually stumbled upon the Grand Chase and joined them.</center>
-		</td><td><center>Prior to <a href="/wiki/Talin%27s_Revenge" title="Talin's Revenge">Talin's Revenge</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Lime" 	class="image image-thumbnail link-internal" 	 title="Lime"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/9/9c/IconHero-Lime-5.png/revision/latest?cb=20180524050548" 	 alt="IconHero-Lime-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Lime-5.png" 	data-image-name="IconHero-Lime-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/9/9c/IconHero-Lime-5.png/revision/latest?cb=20180524050548"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/9/9c/IconHero-Lime-5.png/revision/latest?cb=20180524050548" 	 alt="IconHero-Lime-5"  	class="" 	 	data-image-key="IconHero-Lime-5.png" 	data-image-name="IconHero-Lime-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Lime" title="Lime">Lime</a></b></center>
-		</td><td><center>A <a href="/wiki/Holy_Knight" title="Holy Knight">Holy Knight</a> of the <a href="/wiki/Great_Roose_Nation" title="Great Roose Nation">Great Roose Nation</a>, Lime was accompanying her comrades on their campaign to seal off all Dimensional Portals when she was separated from the group. Lost and wandering around the desert, she was found by the Grand Chase and after learning that they were also sealing the portals, joined them.</center>
-		</td><td><center>Prior to <a href="/wiki/Talin%27s_Revenge" title="Talin's Revenge">Talin's Revenge</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Edel" 	class="image image-thumbnail link-internal" 	 title="Edel"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/b/b9/IconHero-Edel-5.png/revision/latest?cb=20180918081326" 	 alt="IconHero-Edel-5"  	class="lzy lzyPlcHld " 	 	data-image-key="IconHero-Edel-5.png" 	data-image-name="IconHero-Edel-5.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/b/b9/IconHero-Edel-5.png/revision/latest?cb=20180918081326"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/b/b9/IconHero-Edel-5.png/revision/latest?cb=20180918081326" 	 alt="IconHero-Edel-5"  	class="" 	 	data-image-key="IconHero-Edel-5.png" 	data-image-name="IconHero-Edel-5.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Edel" title="Edel">Edel</a></b></center>
-		</td><td><center>The <a href="/wiki/Captain" title="Captain">Captain</a> of the <a href="/wiki/Knights_of_Serdin" title="Knights of Serdin">Knights of Serdin</a>, Edel was researching for information on Dimensional Portals in her search for <a href="/wiki/Adel" title="Adel">Adel</a> when she came to know about the Grand Chase. Upon hearing that they were hunting and sealing portals leading to Elyos, she set out to join them and study the portals for clues regarding her missing brother.</center>
-		</td><td><center>Prior to <a href="/wiki/Tower_of_Disappearance" title="Tower of Disappearance">Tower of Disappearance</a></center>
-		</td></tr>
-		<tr>
-		<td><center><a href="/wiki/Veigas" 	class="image image-thumbnail link-internal" 	 title="Veigas"  	 	><img src="https://vignette.wikia.nocookie.net/grandchase/images/2/21/Grandchase-Veigas-A-2_Icon_01265.png/revision/latest?cb=20180731013822" 	 alt="Grandchase-Veigas-A-2 Icon 01265"  	class="lzy lzyPlcHld " 	 	data-image-key="Grandchase-Veigas-A-2_Icon_01265.png" 	data-image-name="Grandchase-Veigas-A-2 Icon 01265.png" 	 data-src="https://vignette.wikia.nocookie.net/grandchase/images/2/21/Grandchase-Veigas-A-2_Icon_01265.png/revision/latest?cb=20180731013822"  	 width="128"  	 height="128"  	 	 	 onload="if(typeof ImgLzy===&#39;object&#39;){ImgLzy.load(this)}"  	><noscript><img src="https://vignette.wikia.nocookie.net/grandchase/images/2/21/Grandchase-Veigas-A-2_Icon_01265.png/revision/latest?cb=20180731013822" 	 alt="Grandchase-Veigas-A-2 Icon 01265"  	class="" 	 	data-image-key="Grandchase-Veigas-A-2_Icon_01265.png" 	data-image-name="Grandchase-Veigas-A-2 Icon 01265.png" 	 	 width="128"  	 height="128"  	 	 	 	></noscript></a><br /><b><a href="/wiki/Veigas" title="Veigas">Veigas</a></b></center>
-		</td><td>A <a href="/wiki/Magi" title="Magi">Magi</a> ordered by the <a href="/wiki/Deity#Creator" title="Deity">Creator</a> to destroy Aernas, Veigas of the Hardliner family, Terre, fought the prophesied <a href="/wiki/Twelve_Disciples" title="Twelve Disciples">Twelve Disciples</a> and were no match for his overwhelming strength. Upon realizing that the order was false, he left to look for the source of the conspiracy. In the sequel, he was saved by Sieghart, Dio, and Lime in the Purgatory after being held by <a href="/wiki/Pino" title="Pino">Pino</a> then he eventually joined their siege.
-		</td><td><center><a href="/wiki/Purgatory" title="Purgatory">Purgatory</a></center>
-		</td></tr>
-		<tr>
-
-		
-		</td></tr></table>
-		<br><br><br><br><br>
-		<div class="item">
-				<img src="https://i.ibb.co/JdZ3KVQ/Giving-Jaded-Canadagoose-small.gif" class="responsive" alt="Amydance" style="width:40%;">
-			  </div>
-			  
-			  <div class="highlight block"> 
-		<h4 class="center">Screenshots</h4>
-			  </div>
-
-<br>
-
-<div class="jcarousel img"> 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-          </ol>
-      
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-                  <div class="item active ">
-                          <img src="https://i.ibb.co/x710x6c/Arealizationoftheprophecy.png"  alt="Propercy" style="width:100%;height:800px;">
-                          
-                        </div>
-            <div class="item ">
-              <img src="https://i.ibb.co/QKkHP37/JINN.jpg" alt="Dungeon" style="width:100%;height:800px;">
-              
-            </div>
-            
-            <div class="item ">
-              <img src="https://i.ibb.co/RHvdBwH/im.jpg" alt="pscene" style="width:100%;height:800px;">
-              
-            </div>
-            <div class="item ">
-              <img src="http://imagizer.imageshack.com/v2/862x487q90/921/r3tYWP.png" alt="Closet" style="width:100%;height:800px;">
-            </div>
-          
-            <div class="item ">
-              <img src="http://forums.gcmadness.com/uploads/monthly_2017_06/GM.thumb.png.fbd70d51f89783ea30618d13e301963c.png" alt="Gm" style="width:100%;height:800px;">
-            </div>
-          </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
+<div class="row">
+  <div class="side">
+    <h2>About Me</h2>
+    <h5>Photo of me:</h5>
+    <div class="fakeimg" style="height:200px;" img src="https://scontent.fhdy3-1.fna.fbcdn.net/v/t1.0-9/118172567_2719469301487343_31137699525088581_o.jpg">Image</div>
+	<p>Name : Piyapong thammachaisopit</p>
+	<p>Age : 21</p>
+	<p>Birthday : 23/10/1999</p>
+    <h3>More Text</h3>
+    <p>Lorem ipsum dolor sit ame.</p>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div>
+  </div>
+  <div class="main">
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Dec 7, 2017</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <br>
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Sep 2, 2017</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
   </div>
 </div>
-<div class="highlight block"> 
-<h4 class="margin">Some videos</h4>
+
+<div class="footer">
+  <h2>Footer</h2>
 </div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/O_cYUsKbMk0"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</body>
-</html>
-
-</div>
-
-<!-- Footer -->
-<footer class="container-fluid bg-4 responsive text-center">
-  <p>The adventure Started .
-	Go to <a href="http://gcmadness.com/">http://gcmadness.com/</a></p> 
-  
-  
-</footer>
-
-<!-- jquery.min --> <script type="text/javascript" src="js/jquery.min.js"></script>
-	<!-- Bootstrap --> <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-	<!-- Slide-JS -->
-	<script src="js/responsiveslides.min.js"></script>
-	<script>
-		$(function () {
-			$("#slider").responsiveSlides({
-				auto: true,
-				nav: true,
-				speed: 800,
-				namespace: "callbacks",
-				pager: true,
-			});
-		});
-	</script>
-
-	<!-- To-Top JS-->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			var defaults = {
-				containerID: 'toTop',
-				containerHoverID: 'toTopHover',
-				scrollSpeed: 100,
-				easingType: 'linear'
-			};
-			$().UItoTop({ easingType: 'easeOutQuart' });
-		});
-	</script>
-	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 0;"> </span></a>
-
-	<!-- Smooth-Scrolling-JS -->
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
 
 </body>
 </html>
-
